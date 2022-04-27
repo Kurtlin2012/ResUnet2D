@@ -59,7 +59,7 @@ def ResUnet2D(input_size, init_filters=16, n_classes=2):
     
     # Decoder 第四層 (對應Encoder1)
     dec1 = Conv2DTranspose(init_filters, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='he_normal')(dec2) # 512x512x16
-    dec1 = decoder(dec4, filters=init_filters, enc1) # 512x512x16
+    dec1 = decoder(dec1, filters=init_filters, enc1) # 512x512x16
     
     # 輸入端(Output要分為幾個class)
     out = Conv2D(n_classes, kernel_size=(1,1), padding='same')(dec1) # 512x512x2
