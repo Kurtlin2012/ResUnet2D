@@ -1,6 +1,6 @@
 # ResUnet2D
 
-<strong>Editor: Ching-Ting Kurt Lin</strong>
+<strong>Editor: Ching-Ting Kurt Lin / Yi-Tien Li / David Yen-Ting Chen </strong>
 
 <br>A Residual U-Net for model for brain lesion (white matter hyperintensity) segmentation by using MRI T2-FLAIR images.<br><br>
 <br><strong>Unet2D Model Structure</strong><br>
