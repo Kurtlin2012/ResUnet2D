@@ -46,19 +46,19 @@ def ResUnet2D(input_size, init_filters=16, n_classes=2):
     enc5 = encoder(enc5, init_filters*16) # 32x32x256
     
     # Decoder 第一層 (對應Encoder4)
-    dec4 = Conv2DTranspose(init_filters*8, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='he_normal')(enc5) # 64x64x128
+    dec4 = Conv2DTranspose(init_filters*8, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='glorot_normal')(enc5) # 64x64x128
     dec4 = decoder(dec4, filters=init_filters*8, enc4) # 64x64x128
     
     # Decoder 第二層 (對應Encoder3)
-    dec3 = Conv2DTranspose(init_filters*4, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='he_normal')(dec4) # 128x128x64
+    dec3 = Conv2DTranspose(init_filters*4, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='glorot_normal')(dec4) # 128x128x64
     dec3 = decoder(dec3, filters=init_filters*4, enc3) # 128x128x64
     
     # Decoder 第三層 (對應Encoder2)
-    dec2 = Conv2DTranspose(init_filters*2, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='he_normal')(dec3) # 256x256x32
+    dec2 = Conv2DTranspose(init_filters*2, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='glorot_normal')(dec3) # 256x256x32
     dec2 = decoder(dec2, filters=init_filters*2, enc2) # 256x256x32
     
     # Decoder 第四層 (對應Encoder1)
-    dec1 = Conv2DTranspose(init_filters, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='he_normal')(dec2) # 512x512x16
+    dec1 = Conv2DTranspose(init_filters, kernel_size=(3,3), padding='same', strides=2, kernel_initializer='glorot_normal')(dec2) # 512x512x16
     dec1 = decoder(dec1, filters=init_filters, enc1) # 512x512x16
     
     # 輸入端(Output要分為幾個class)
