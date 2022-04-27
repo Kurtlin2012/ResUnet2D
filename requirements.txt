@@ -1,0 +1,7 @@
+argparse
+pandas
+tensorflow
+matplotlib
+pandas
+scikit-learn
+natsort
